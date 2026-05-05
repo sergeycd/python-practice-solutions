@@ -1,7 +1,7 @@
 <!-- Заголовок и описание -->
 # 🐍 Мои решения задач на Python
 
-Здесь храняться задачи которые я решаю для общей практики в свободное время.
+Здесь храняться задачи, которые я решаю для общей практики в свободное время.
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
