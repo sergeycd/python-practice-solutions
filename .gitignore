@@ -1,1 +1,5 @@
 venv/
+.venv/
+.mypy_cache
+functions/__pycache__
+__pycache__
