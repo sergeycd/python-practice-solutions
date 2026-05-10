@@ -5,7 +5,6 @@ from pathlib import Path
 if __name__ == '__main__':
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-import init_path
 from functions.func import get_index
 
 # Дан список букв из названия фильма:
@@ -35,3 +34,16 @@ first_letter, second_letter, third_letter = [
 print(first_letter)
 print(second_letter)
 print(third_letter)
+
+# В списке apples_by_day хранятся данные об урожае яблок за 10 дней:
+# apples_by_day = [61, 58, 56, 34, 67, 50, 74, 64, 78, 69]
+# Распакуйте этот список в отдельные переменные, дав им осмысленные имена
+# (например, day1, day2, … или mon, tue, …).
+# Затем вычислите и напечатайте сумму яблок за первые три дня и сумму яблок за
+# последние три дня, используя только полученные переменные (без обращения к
+# исходному списку).
+
+apples_by_day = [61, 58, 56, 34, 67, 50, 74, 64, 78, 69]
+day1, day2, day3, day4, day5, day6, day7, day8, day9, day10 = apples_by_day
+print(day1 + day2 + day3)
+print(day8 + day9 + day10)
