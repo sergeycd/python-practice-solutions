@@ -77,3 +77,22 @@ print(basket)
 last_vegetable = basket.pop(-1)
 print(basket)
 print(last_vegetable)
+
+# Дан список урожайности:
+# yields = [10, 12, 15, 10, 8, 10]
+# Создайте настоящую копию этого списка в переменной true_copy с помощью метода copy.
+# Создайте переменную fake_copy и присвойте ей значение yields.
+# Отсортируйте исходный список yields по возрастанию.
+# Выведите на экран yields, true_copy и fake_copy.
+# Объясните (в комментарии) почему вывод true_copy и fake_copy различается.
+
+yields = [10, 12, 15, 10, 8, 10]
+true_copy = yields.copy()
+fake_copy = yields
+yields.sort()
+print(yields)
+print(true_copy)
+print(fake_copy)
+# Отличие заключается в том что данные списки стали разными сущностями в тот
+# момент когда
+# мы создали копию исходного списка через метод copy
