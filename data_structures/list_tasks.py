@@ -5,7 +5,7 @@ from pathlib import Path
 if __name__ == '__main__':
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from functions.func import get_index
+from functions.func import get_index, select_value
 
 # Дан список букв из названия фильма:
 
@@ -131,3 +131,64 @@ harvest.reverse()
 print(harvest)
 last_harvest = harvest.pop()
 print(last_harvest)
+
+# Дан кортеж с урожаем яблок за десять дней:
+# apples = (61, 58, 56, 34, 67, 50, 74, 64, 78, 69)
+# Распакуйте кортеж в переменные day1, day2, ..., day10
+# (осмысленные имена).
+# Используя только переменные, вычислите и напечатайте
+# сумму урожая за первые три дня.
+# Используя индексацию исходного кортежа, выведите на
+# экран значение шестого дня (индекс 5).
+# Ожидаемый вывод:
+# text
+# 175
+# 50
+apples = (61, 58, 56, 34, 67, 50, 74, 64, 78, 69)
+apples_day_1, apples_day_2, apples_day_3, apples_day_4, apples_day_5, apples_day_6, apples_day_7, apples_day_8, apples_day_9, apples_day_10 = apples  
+print(apples_day_1 + apples_day_2 + apples_day_3)
+print(apples[5])
+
+# Напишите функцию describe_harvest(*crops), которая принимает
+# произвольное количество названий культур (строк) и
+# возвращает кортеж из двух элементов:
+# строку вида "Урожай собран: яблоки, груши, сливы"
+# (все переданные культуры через запятую и пробел),
+# количество переданных культур (целое число).
+# Вызовите функцию с аргументами 'яблоки', 'груши', 'сливы'.
+# Распакуйте возвращаемый кортеж в переменные 
+# description и count, выведите их на отдельных строках.
+# Ожидаемый вывод:
+# Урожай собран: яблоки, груши, сливы
+# 3
+
+
+def describe_harvest(*crops):
+    """Функция describe_harvest."""
+    return f'Урожай собран: {crops}', len(crops)
+
+
+description, count = describe_harvest('яблоки', 'груши', 'сливы')
+print(description)
+print(count)
+
+# Дан кортеж урожайности:
+# yields = (120, 85, 150, 90, 200, 110, 95)
+# Создайте новый кортеж high_yields_sorted, который
+# содержит все значения из yields, превышающие
+# 100, отсортированные по убыванию. Исходный кортеж yields должен остаться неизменным.
+# Подсказка:
+# Сначала получите новый кортеж из
+# подходящих элементов (например, с помощью tuple(x for x in yields if x > 100)).
+# Затем примените функцию sorted() с
+# параметром reverse=True и результат преобразуйте в кортеж.
+# Выведите исходный кортеж и получившийся high_yields_sorted.
+# Ожидаемый вывод:
+# (120, 85, 150, 90, 200, 110, 95)
+# (200, 150, 120, 110)
+
+yields_tuple = (120, 85, 150, 90, 200, 110, 95)
+
+tuple_with_one_hundred = tuple(select_value(yields_tuple, 100))
+print(yields_tuple)
+print(tuple_with_one_hundred)
