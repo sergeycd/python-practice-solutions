@@ -192,3 +192,20 @@ yields_tuple = (120, 85, 150, 90, 200, 110, 95)
 tuple_with_one_hundred = tuple(select_value(yields_tuple, 100))
 print(yields_tuple)
 print(tuple_with_one_hundred)
+
+
+# Дана строка:
+# garden_str = 'Кабачки полезны для здоровья.'
+# Напишите код, который только с помощью индексации
+# и функции print() выведет на экран слово «зал», по одной букве
+# на строке. Используйте положительные индексы для всех букв.
+# (Напоминание: пробел — это тоже символ со своим индексом.)
+# Ожидаемый вывод:
+# з
+# а
+# л
+
+garden_str = 'Кабачки полезны для здоровья.'
+print(garden_str[garden_str.find('з')])
+print(garden_str[garden_str.find('а')])
+print(garden_str[garden_str.find('л')])
