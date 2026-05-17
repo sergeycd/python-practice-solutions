@@ -346,3 +346,26 @@ print(new_string)
 # Максимум field1: 75, минимум: 45
 # Максимум field2: 80, минимум: 45
 # Максимум field3: 75, минимум: 45
+
+field1 = [45, 50, 55, 60, 65, 70, 75]
+field2 = [45, 50, 55, 60, 65, 70, 75, 80]
+field3 = [45, 50, 55, 59, 65, 70, 75]
+
+compare_fields_12 = field1 < field2
+print(compare_fields_12)
+
+compare_fields_13 = field1 > field3
+print(compare_fields_13)
+
+min_for_field1 = min(field1)
+max_for_field1 = max(field1)
+
+min_for_field2 = min(field2)
+max_for_field2 = max(field2)
+
+min_for_field3 = min(field3)
+max_for_field3 = max(field3)
+
+print(f'Максимум field1: {max_for_field1}, минимум: {min_for_field1}')
+print(f'Максимум field1: {max_for_field2}, минимум: {min_for_field2}')
+print(f'Максимум field1: {min_for_field3}, минимум: {max_for_field3}')
