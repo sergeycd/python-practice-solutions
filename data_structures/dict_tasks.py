@@ -13,3 +13,35 @@ harvest = [120, 95, 140]
 harvest_zip = zip(fruits, harvest)
 harvest_dict = dict(harvest_zip)
 print(harvest_dict)
+
+# Дан список кортежей, каждый из которых содержит название культуры,
+# её сорт и урожайность:
+# data = [
+#     ('Помидоры', 'Красный куб', 6.5),
+#     ('Огурцы', 'Аллигатор', 4.3),
+#     ('Баклажаны', 'Василёк', 2.8)
+# ]
+# Напишите код, который создаст словарь crop_info, где:
+# ключ — название культуры (строка),
+# значение — кортеж из двух элементов: сорт и урожайность.
+# Сделайте это через преобразование данных, например с помощью zip()
+# или циклов, не переписывая словарь вручную. Выведите результат.
+# Ожидаемый вывод:
+# {'Помидоры': ('Красный куб', 6.5), 'Огурцы': ('Аллигатор', 4.3), 'Баклажаны': ('Василёк', 2.8)}
+
+
+data = [
+    ('Помидоры', 'Красный куб', 6.5),
+    ('Огурцы', 'Аллигатор', 4.3),
+    ('Баклажаны', 'Василёк', 2.8)
+]
+keys_for_harves_dict = []
+values_for_harves_dict = []
+for tpl in data:
+    list_tuple = list(tpl)
+    keys_for_harves_dict.append(list_tuple.pop(0))
+    values_for_harves_dict.append(tuple(list_tuple))
+
+zip_harvest = zip(keys_for_harves_dict, values_for_harves_dict)
+dict_harvest = dict(zip_harvest)
+print(dict_harvest)
