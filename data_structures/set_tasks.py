@@ -7,3 +7,10 @@
 # Преобразует итоговое множество в отсортированный по алфавиту список и выведет его.
 # Ожидаемый вывод:
 # ['Баклажан', 'Огурец', 'Перец', 'Помидор']
+
+vegetables1 = ['Помидор', 'Огурец', 'Помидор', 'Баклажан']
+vegetables2 = ['Огурец', 'Перец', 'Баклажан', 'Помидор']
+
+intersection_vegetable = set(vegetables1) & set(vegetables2)
+sort_list_vegetable = sorted(list(intersection_vegetable))
+print(sort_list_vegetable)
