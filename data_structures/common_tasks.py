@@ -105,10 +105,8 @@ def get_stickers_comparison(collection_1, collection_2):
 # При проверке строки программа должна игнорировать регистр символов и пробелы.
 
 def pal_list(palindrom):
-    pal_list = [x for x in list(palindrom) if x != ' ']
-    copy_pal_list = pal_list.copy()
-    copy_pal_list.reverse()
-    return ''.join(copy_pal_list).lower() == ''.join(pal_list).lower()
+    pal_list = palindrom.replace(' ', '').lower()
+    return pal_list == pal_list[::-1]
 
 
 print(pal_list('Тонет енот'))
