@@ -144,3 +144,13 @@ print(pal_list('Тонет енот'))
 # Обратите внимание, как работает функция int(): округление
 # всегда происходит вниз.
 # Поэтому погрешности в левой и правой границах допустимы.
+
+
+def get_selection(collection):
+    procent_from_list = int(len(collection) * 0.1)
+    common_size_list = collection[procent_from_list:len(collection) - procent_from_list]
+    return common_size_list
+
+
+size_list = [140.1, 150.3, 154.9, 160.4, 162.7, 163, 168.9, 170, 179.1, 180]
+print(get_selection(size_list))
