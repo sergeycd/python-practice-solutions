@@ -380,18 +380,52 @@ print(detect_duplicates(4, 2))  # 0
 # <название услуги> в <время записи в формате ЧЧ:ММ>. Стоимость: <цена услуги>»
 
 SERVICES = {
-'маникюр': 2000,
-'педикюр': 2500,
-'брови': 1500,
-'ресницы': 1000,
-'массаж тела': 5000
+    'маникюр': 2000,
+    'педикюр': 2500,
+    'брови': 1500,
+    'ресницы': 1000,
+    'массаж тела': 5000
 }
 
-booking_dict = {}
+schedule = {}
 
-def update_schedule(dt: datetime, name: str, service: str, price: int, schedule, services):
-    date_key = dt.strftime('DD.MM')
-    time_book = dt.strftime('HH.mm')
+
+def update_schedule(
+        dt: datetime,
+        name: str,
+        service: str,
+        schedule,
+        services,
+        price: int = 0
+        ):
+    date_key = dt.strftime('%d.%m')
+    time_book = dt.strftime('%H:%M')
+    service = service.lower()
+
+    if price == 0:
+        if service in services:
+            price = services[service]
+        else:
+            return 'Запись не добавлена! Укажите стоимость услуги.'
+
     if date_key not in schedule:
         schedule[date_key] = []
 
+    schedule[date_key].append({
+        'time': time_book,
+        'name': name,
+        'service': service,
+        'price': price
+    })
+    return (f'На {date_key} добавлена новая запись: '
+            f'{name} на {service} в {time_book}. Стоимость: {price}')
+
+
+print(update_schedule(datetime(2025, 1, 15, 15, 30),
+                        "Маша К.",
+                        'Ноготочки',
+                        schedule,
+                        SERVICES,
+                        0))
+
+# ========================================================================
