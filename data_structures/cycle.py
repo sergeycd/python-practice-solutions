@@ -64,3 +64,28 @@ for service, price in list_services:
 
 print(f'Общая стоимость: {total_sum} руб.')
 print(f'Услуг дороже {price_line} руб.: {expensive_service}')
+
+
+# Напишите функцию count_duplicates(*args),
+# которая принимает произвольное количество строк и
+# возвращает количество строк, которые встречаются
+# в переданных аргументах больше одного раза
+# (количество дубликатов, считая каждое значение только один раз).
+
+def count_duplicates(*args):
+    counter = 0
+    string_list = list(args)
+    for string in string_list:
+        removed_string = string_list.pop(0)
+        qlt_removed_string = string_list.count(removed_string)
+        if qlt_removed_string > 0:
+            counter += 1
+            for i in (range(qlt_removed_string)):
+                string_list.remove(removed_string)
+    return counter
+                
+
+
+# Для проверки используйте вызов:
+result = count_duplicates('яблоко', 'банан', 'яблоко', 'груша', 'банан', 'яблоко')
+print(result)  # 2 (дубликаты: 'яблоко' и 'банан')
