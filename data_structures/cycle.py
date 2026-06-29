@@ -1,4 +1,4 @@
-
+from random import randint
 
 # Даны два списка:
 # vegetables = ['Помидоры', 'Огурцы', 'Баклажаны', 'Перец', 'Капуста']
@@ -83,9 +83,68 @@ def count_duplicates(*args):
             for i in (range(qlt_removed_string)):
                 string_list.remove(removed_string)
     return counter
-                
 
 
 # Для проверки используйте вызов:
-result = count_duplicates('яблоко', 'банан', 'яблоко', 'груша', 'банан', 'яблоко')
+result = count_duplicates('яблоко', 'банан', 'яблоко', 'груша',
+                          'банан', 'яблоко')
 print(result)  # 2 (дубликаты: 'яблоко' и 'банан')
+
+# Напишите функцию happy_number_game(start_number), которая принимает целое
+# число и уменьшает его на 1 до тех пор, пока число не станет делиться на 7
+# без остатка. Как только такое число найдено — функция должна вывести его и
+# количество выполненных вычитаний.
+# Вызовите функцию для числа 50.
+
+# Ожидаемый вывод:
+# Счастливое число: 49
+# Потребовалось вычитаний: 1
+
+
+def happy_number_game(start_number):
+    counter = 0
+    while start_number % 7 != 0:
+        start_number -= 1
+        counter += 1
+    print(f'Счастливое число: {start_number}')
+    print(f'Потребовалось вычитаний: {counter}')
+
+
+happy_number_game(50)
+
+
+# Напишите программу, которая имитирует бросание игрального кубика
+# (числа от 1 до 6) до тех пор, пока три раза подряд не выпадет одно и то же
+# число. После каждого броска выводите выпавшее число.
+# Когда условие выполнено — выведите сообщение «Три одинаковых подряд!» и
+# количество сделанных бросков.
+# Используйте from random import randint.
+
+# Ожидаемый вывод (пример):
+# Бросок 1: 4
+# Бросок 2: 1
+# Бросок 3: 5
+# Бросок 4: 5
+# Бросок 5: 5
+# Три одинаковых подряд!
+# Всего бросков: 5
+
+def dice():
+    last_value = 0
+    double_drop = 0
+    counter_drop = 0
+    while double_drop < 3:
+        new_value = randint(1, 6)
+        counter_drop += 1
+        print(f'Бросок {counter_drop}: {new_value}')
+
+        if last_value == new_value:
+            double_drop += 1
+        else:
+            double_drop = 1
+        last_value = new_value
+    print("Три одинаковых подряд!")
+    print(f'Всего бросков: {counter_drop}')
+
+
+dice()
